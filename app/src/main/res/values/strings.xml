@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ValutaConverter</string>
+    
+    <string-array name="currency">
+        <item>DKK</item>
+        <item>EUR</item>
+        <item>USD</item>
+        <item>AUD</item>
+        <item>GBP</item>
+    </string-array>
+</resources>
