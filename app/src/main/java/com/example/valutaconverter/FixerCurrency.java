@@ -26,6 +26,7 @@ public class FixerCurrency implements CurrencyDAO, RateCallable {
     ArrayList<Rateable> counterList = new ArrayList<>();
     ArrayList<Rate> listOfRates = new ArrayList<>();
 
+    //return list of rates
     @Override
     public ArrayList<Rate> GetRates(String base) {
 
@@ -46,6 +47,7 @@ public class FixerCurrency implements CurrencyDAO, RateCallable {
      grc.GetData(activity,from);
     }
 
+    //Call back when we get data from api
     @Override
     public void RateCallback(Rate rate) {
         for (int i = 0; i < counterList.size();i++){

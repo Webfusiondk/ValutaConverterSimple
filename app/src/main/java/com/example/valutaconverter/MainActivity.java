@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements Rateable {
         LoadButton();
     }
 
+    //Load spinner
     void LoadSpinner(){
         Spinner spinner = (Spinner) findViewById(R.id.currencySpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements Rateable {
         spinner.setAdapter(adapter);
     }
 
+    //Initialize onclick
     void LoadButton(){
         Button button = (Button) findViewById(R.id.Calculate);
         button.setOnClickListener(new View.OnClickListener(){
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements Rateable {
         });
     }
 
+    //get userinput from ui
     public Rate GetUserInput(){
         Spinner spinner = (Spinner) findViewById(R.id.currencySpinner);
         String currency = spinner.getSelectedItem().toString();
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements Rateable {
         return rate;
     }
 
+    //Update ui with data from api
     @Override
     public void UpdateUI(Rate rate) {
         TextView currency,rateView;

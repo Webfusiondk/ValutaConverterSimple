@@ -19,6 +19,7 @@ public class GetRatesCaller implements Response.Listener, Response.ErrorListener
     ArrayList<String> countries = new ArrayList<>();
     private static final String TAG = "GetRatesCaller";
 
+    //Get data from api
     public void GetData(Context Activity, String from){
         RequestQueue queue = Volley.newRequestQueue(Activity);
         //Gets the conversion from 1 currency to a new one
@@ -27,6 +28,7 @@ public class GetRatesCaller implements Response.Listener, Response.ErrorListener
             queue.add(jsonObjectRequest);
     }
 
+    //Convert the response data to new rate obj
     @Override
     public void onResponse(Object response) {
         String temp = response.toString();
@@ -35,6 +37,7 @@ public class GetRatesCaller implements Response.Listener, Response.ErrorListener
         callable.RateCallback(rate);
     }
 
+    //Write the error in debug.
     @Override
     public void onErrorResponse(VolleyError error) {
         Log.d(TAG, error.toString());
